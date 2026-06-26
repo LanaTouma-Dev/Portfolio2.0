@@ -1,0 +1,97 @@
+<section class="projects">
+  <div class="projects__inner">
+
+    <!-- ===== top nav ===== -->
+    <nav class="pnav">
+      <a class="pnav__logo" routerLink="/">Lana<span>.</span></a>
+      <div class="pnav__links">
+        <a routerLink="/">Home</a>
+        <a routerLink="/" fragment="skills">Skills</a>
+        <a routerLink="/" fragment="contact">Contact</a>
+      </div>
+    </nav>
+
+    <!-- ===== header ===== -->
+    <header class="phead">
+      <span class="eyebrow" appReveal>
+        <span class="eyebrow__num">—</span>Selected Work
+      </span>
+      <h1 class="phead__title" appReveal [revealDelay]="100">
+        Things I've <span class="grad">built.</span>
+      </h1>
+      <p class="phead__sub" appReveal [revealDelay]="200">
+        A few projects I'm proud of — from end-to-end platforms to the systems behind them.
+      </p>
+    </header>
+
+    <!-- ===== bento grid ===== -->
+    <div class="bento">
+      @for (p of projects; track p.slug; let i = $index) {
+        @if (p.draft) {
+          <div class="card card--{{ p.size }} card--draft" appReveal [revealFrom]="p.from"
+            [revealDelay]="i * 90">
+            <span class="draft__plus">+</span>
+            <span class="draft__text">More coming soon</span>
+          </div>
+        } @else {
+          <!-- TODO: routerLink="/projects/{{ p.slug }}" once the case-study page exists -->
+          <article class="card card--{{ p.size }}" appReveal [revealFrom]="p.from"
+            [revealDelay]="i * 90">
+            <div class="card__media" [style.background]="p.gradient">
+              @if (p.image) {
+                <img [src]="p.image" [alt]="p.name + ' screenshot'"
+                  [style.object-position]="p.pos || '50% 50%'" loading="lazy" />
+              }
+            </div>
+
+            <div class="card__body">
+              <div class="card__tags">
+                @for (t of p.tags; track t) {
+                  <span class="tag">{{ t }}</span>
+                }
+              </div>
+
+              <h2 class="card__name">
+                {{ p.name }}
+                @if (p.arabic) {
+                  <span class="card__arabic">{{ p.arabic }}</span>
+                }
+              </h2>
+              <p class="card__tagline">{{ p.tagline }}</p>
+
+              <div class="card__actions">
+                @if (p.url) {
+                  <a class="card__link" [href]="p.url" target="_blank" rel="noopener">
+                    Visit live
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M7 17 17 7M9 7h8v8" />
+                    </svg>
+                  </a>
+                } @else {
+                  <span class="card__soon">Case study coming soon</span>
+                }
+              </div>
+            </div>
+          </article>
+        }
+      }
+
+      <!-- ===== CTA banner ===== -->
+      <div class="card card--cta" appReveal revealFrom="up" [revealDelay]="200">
+        <div class="cta__text">
+          <h3>Have a project in mind?</h3>
+          <p>I'm open to new work — let's build something together.</p>
+        </div>
+        <a class="cta__btn" routerLink="/" fragment="contact">
+          Let's talk
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M5 12h14M13 6l6 6-6 6" />
+          </svg>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,181 @@
+:host {
+  display: block;
+}
+
+/* ============ ABOUT SECTION ============ */
+.about {
+  padding: 48px 48px 90px;
+  background: var(--bone);
+  overflow: hidden;
+}
+
+.about__inner {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+/* ---- Row 1: Hi there! ---- */
+.about__intro {
+  margin-bottom: 80px;
+}
+
+
+.about__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 16px;
+
+  .eyebrow__num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 54px;
+    font-weight: 400;
+    color: rgba(124, 58, 71, 0.16);
+    line-height: 1;
+    letter-spacing: -0.04em;
+    text-transform: none;
+  }
+}
+
+.about__hi {
+  font-family: 'DM Serif Display', serif;
+  font-size: 68px;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: 22px;
+}
+
+.about__lead {
+  font-size: 21px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  max-width: 520px;
+  margin-bottom: 60px;
+}
+
+/* ---- Row 2: My Career So Far ---- */
+.about__career {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: start;
+
+  .bento-timeline {
+    margin-top: -40px;
+  }
+}
+
+.about__career-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 40px;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin-bottom: 22px;
+}
+
+.about__career-body {
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--ink-soft);
+  max-width: 460px;
+}
+
+/* ---- Bento Box Career Grid ---- */
+.bento-timeline {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.bento-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 16px 20px;
+  box-shadow: 0 10px 26px var(--shadow);
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 30px var(--shadow-hover);
+  }
+
+  /* Bento grid positioning for 4 items */
+  &:nth-child(1) { grid-column: 1 / 2; grid-row: 1 / 2; } /* BSc */
+  &:nth-child(2) { grid-column: 2 / 3; grid-row: 1 / 2; } /* Freelance */
+  &:nth-child(3) { grid-column: 1 / -1; grid-row: 2 / 3; padding: 20px 24px; } /* Syriatel */
+  &:nth-child(4) { grid-column: 1 / -1; grid-row: 3 / 4; padding: 20px 24px; } /* Now */
+}
+
+.bento-year {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  margin-bottom: 4px;
+  text-transform: uppercase;
+}
+
+.bento-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+.bento-org {
+  font-weight: 600;
+  color: var(--accent);
+  font-size: 14.5px;
+}
+
+.bento-note {
+  margin-top: 6px;
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+
+/* The "Now" node */
+.bento-card--current {
+  border-color: rgba(124, 58, 71, 0.35);
+  background: linear-gradient(160deg, #f6ece9 0%, var(--surface) 75%);
+  .bento-year { color: var(--accent); }
+}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 900px) {
+  .about { padding: 56px 20px; }
+
+  .about__intro {
+    margin-bottom: 56px;
+  }
+
+  .about__hi { font-size: 46px; }
+  .about__lead { font-size: 18px; margin-bottom: 0; }
+
+  .about__career {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+@media (max-width: 600px) {
+  .bento-timeline {
+    grid-template-columns: 1fr;
+  }
+  .bento-card {
+    grid-column: 1 / -1 !important;
+    grid-row: auto !important;
+  }
+}

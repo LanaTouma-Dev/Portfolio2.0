@@ -1,0 +1,54 @@
+<section class="about" id="about">
+  <div class="about__inner">
+    <!-- ===== Row 1: Hi there! ===== -->
+    <div class="about__intro">
+      <div class="about__intro-text">
+        <span class="about__eyebrow" appReveal [revealDelay]="80">
+          <span class="eyebrow__num">01</span>About Me
+        </span>
+        <h2 class="about__hi" appReveal [revealDelay]="160">Hi there!</h2>
+        <p class="about__lead" appReveal [revealDelay]="260">
+          Fueled by a passion for building software that's both intelligent and
+          intuitive, I love turning complex problems into clean, scalable systems.
+          Get to know a bit about my journey below.
+        </p>
+      </div>
+    </div>
+
+    <!-- ===== Row 2: My Career So Far ===== -->
+    <div class="about__career">
+      <div class="about__career-text">
+        <h3 class="about__career-title" appReveal>My Career So Far</h3>
+        <p class="about__career-body" appReveal [revealDelay]="120">
+          I'm a full stack &amp; AI engineer who loves owning a product end to end —
+          from system architecture and APIs to polished frontends. Lately I'm deep
+          in system design, while still experimenting with UI/UX and integrating
+          (and training) AI inside real systems. Always learning, always shipping.
+        </p>
+      </div>
+
+      <div class="bento-timeline">
+        @for (m of timeline; track m.year; let i = $index) {
+          <div
+            class="bento-card"
+            [class.bento-card--current]="m.current"
+            appReveal
+            revealFrom="up"
+            [revealDelay]="i * 100"
+          >
+            <span class="bento-year">{{ m.year }}</span>
+            <h4 class="bento-title">
+              {{ m.title }}
+              @if (m.org) {
+                <span class="bento-org">@ {{ m.org }}</span>
+              }
+            </h4>
+            @if (m.note) {
+              <p class="bento-note">{{ m.note }}</p>
+            }
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>

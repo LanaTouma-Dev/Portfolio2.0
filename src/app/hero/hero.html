@@ -1,0 +1,79 @@
+<section class="hero">
+  <!-- ===== NAV ===== -->
+  <nav class="nav">
+    <div class="nav__logo">Lana<span>.</span></div>
+
+    <ul class="nav__links">
+      <li><a class="is-active" href="#home">Home</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#connect">Connect</a></li>
+    </ul>
+
+    <a class="nav__resume" href="/Lana_Touma.pdf" download="Lana_Touma.pdf">
+      <span class="nav__resume-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+          stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="7 10 12 15 17 10" />
+          <line x1="12" y1="15" x2="12" y2="3" />
+          <path d="M5 19h14" />
+        </svg>
+      </span>
+      <span class="nav__resume-text">Download<br />Résumé</span>
+    </a>
+  </nav>
+
+  <!-- ===== BODY ===== -->
+  <div class="hero__body">
+    <!-- LEFT -->
+    <div class="hero__left">
+      <p class="hero__greeting">Hey, I am <span>Lana</span></p>
+      <h1 class="hero__title">
+        <span class="hero__title-main">Full Stack</span>
+        <span class="hero__title-sub">Developer</span>
+      </h1>
+      <p class="hero__subtitle">
+        Full Stack &amp; AI Engineer building intuitive, intelligent digital experiences.
+      </p>
+
+      <div class="hero__actions">
+        <a class="btn btn--primary" href="#connect">Hire Me</a>
+        <a class="btn btn--icon" href="#connect" aria-label="Message me">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <rect x="2" y="4" width="20" height="16" rx="2" />
+            <path d="m22 7-10 5L2 7" />
+          </svg>
+        </a>
+      </div>
+
+      <div class="hero__divider"></div>
+
+      <!-- testimonial -->
+      <figure class="testimonial">
+        <div class="testimonial__quote">&ldquo;</div>
+        <blockquote class="testimonial__text">
+          Exceptional systems thinking and attention to detail. The final product
+          was both scalable and beautifully built.
+        </blockquote>
+        <figcaption class="testimonial__author">
+          <div class="testimonial__avatar">S</div>
+          <div>
+            <div class="testimonial__name">Sarah Klein</div>
+            <div class="testimonial__role">Engineering Manager</div>
+          </div>
+        </figcaption>
+      </figure>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="hero__right"></div>
+  </div>
+
+  <!-- stacked offset blocks: wine behind, cream in front, portrait rests on it -->
+  <div class="hero__stage hero__stage--back" aria-hidden="true"></div>
+  <div class="hero__stage hero__stage--front" aria-hidden="true"></div>
+
+  <!-- portrait pinned to hero bottom edge so it gets clipped -->
+  <img class="hero__avatar" src="hero-portrait.png" alt="Lana Touma" />
+</section>
