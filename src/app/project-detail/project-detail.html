@@ -1,0 +1,184 @@
+@if (project) {
+<div class="pd">
+  <div class="pd__inner">
+
+    <!-- NAV -->
+    <nav class="pd-nav">
+      <a class="pd-nav__logo" routerLink="/">Lana<span>.</span></a>
+      <a class="pd-nav__back" routerLink="/projects">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M19 12H5M11 6l-6 6 6 6" />
+        </svg>
+        All projects
+      </a>
+    </nav>
+
+    <!-- HERO TEXT -->
+    <header class="pd-hero" appReveal>
+      <div class="pd-hero__tags">
+        @for (t of project.tags; track t) {
+          <span class="tag">{{ t }}</span>
+        }
+      </div>
+      <h1 class="pd-hero__title">
+        {{ project.name }}
+        @if (project.arabic) {
+          <span class="pd-hero__arabic">{{ project.arabic }}</span>
+        }
+      </h1>
+      <p class="pd-hero__tagline">{{ project.tagline }}</p>
+    </header>
+
+  </div>
+
+  <!-- CAROUSEL -->
+  @if (slides.length) {
+  <div class="pd__inner">
+    <div class="pd-carousel" appReveal [revealDelay]="100">
+      <div class="pd-carousel__viewport">
+        <div class="pd-carousel__track"
+          [style.transform]="'translateX(-' + currentSlide * 100 + '%)'">
+          @for (s of slides; track s) {
+            <div class="pd-carousel__slide">
+              <img [src]="s" [alt]="project.name + ' screenshot'" />
+            </div>
+          }
+        </div>
+      </div>
+
+      @if (slides.length > 1) {
+        <button class="pd-carousel__btn pd-carousel__btn--prev"
+          (click)="prev()" aria-label="Previous screenshot">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M15 18l-6-6 6-6" />
+          </svg>
+        </button>
+        <button class="pd-carousel__btn pd-carousel__btn--next"
+          (click)="next()" aria-label="Next screenshot">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 18l6-6-6-6" />
+          </svg>
+        </button>
+
+        <div class="pd-carousel__dots">
+          @for (s of slides; track $index; let i = $index) {
+            <button class="pd-carousel__dot"
+              [class.pd-carousel__dot--active]="i === currentSlide"
+              (click)="goTo(i)" [attr.aria-label]="'Go to slide ' + (i + 1)">
+            </button>
+          }
+        </div>
+      }
+    </div>
+  </div>
+  }
+
+  <div class="pd__inner">
+
+    <!-- META STRIP -->
+    <div class="pd-meta" appReveal [revealDelay]="160">
+      @if (project.year) {
+        <div class="pd-meta__item">
+          <span class="pd-meta__label">Year</span>
+          <span class="pd-meta__value">{{ project.year }}</span>
+        </div>
+      }
+      @if (project.role) {
+        <div class="pd-meta__item">
+          <span class="pd-meta__label">Role</span>
+          <span class="pd-meta__value">{{ project.role }}</span>
+        </div>
+      }
+      @if (project.tags.length) {
+        <div class="pd-meta__item">
+          <span class="pd-meta__label">Type</span>
+          <span class="pd-meta__value">{{ project.tags[0] }}</span>
+        </div>
+      }
+      @if (project.url) {
+        <a class="pd-meta__link" [href]="project.url" target="_blank" rel="noopener">
+          Visit live site
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M7 17 17 7M9 7h8v8" />
+          </svg>
+        </a>
+      }
+    </div>
+
+    <!-- OVERVIEW -->
+    @if (project.overview) {
+      <div class="pd-overview" appReveal [revealDelay]="200">
+        <span class="pd-section__eyebrow">Overview</span>
+        <p class="pd-overview__text">{{ project.overview }}</p>
+      </div>
+    }
+
+    <!-- CHALLENGE + SOLUTION -->
+    @if (project.challenge && project.solution) {
+      <div class="pd-two-col" appReveal [revealDelay]="100">
+        <div class="pd-section">
+          <span class="pd-section__eyebrow">The Challenge</span>
+          <p class="pd-section__text">{{ project.challenge }}</p>
+        </div>
+        <div class="pd-section">
+          <span class="pd-section__eyebrow">The Solution</span>
+          <p class="pd-section__text">{{ project.solution }}</p>
+        </div>
+      </div>
+    }
+
+    <!-- HIGHLIGHTS -->
+    @if (project.highlights?.length) {
+      <div class="pd-highlights">
+        <span class="pd-section__eyebrow" appReveal>Key Features</span>
+        <div class="pd-highlights__grid">
+          @for (h of project.highlights; track h.title; let i = $index) {
+            <div class="pd-highlight" appReveal revealFrom="up" [revealDelay]="i * 80">
+              <span class="pd-highlight__num">0{{ i + 1 }}</span>
+              <h3 class="pd-highlight__title">{{ h.title }}</h3>
+              <p class="pd-highlight__desc">{{ h.desc }}</p>
+            </div>
+          }
+        </div>
+      </div>
+    }
+
+    <!-- TECH STACK -->
+    @if (project.tech?.length) {
+      <div class="pd-tech" appReveal>
+        <span class="pd-section__eyebrow">Tech Stack</span>
+        <div class="pd-tech__chips">
+          @for (t of project.tech; track t) {
+            <span class="pd-tech__chip">{{ t }}</span>
+          }
+        </div>
+      </div>
+    }
+
+    <!-- FOOTER -->
+    <div class="pd-foot">
+      <a class="pd-foot__back" routerLink="/projects">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M19 12H5M11 6l-6 6 6 6" />
+        </svg>
+        Back to projects
+      </a>
+      @if (project.url) {
+        <a class="pd-foot__live" [href]="project.url" target="_blank" rel="noopener">
+          Visit live site
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M7 17 17 7M9 7h8v8" />
+          </svg>
+        </a>
+      }
+    </div>
+
+  </div>
+</div>
+}

@@ -373,21 +373,94 @@
 }
 
 @media (max-width: 900px) {
-  .hero { padding: 24px 24px 0; min-height: 100vh; }
+  .hero {
+    padding: 24px 24px 0;
+    min-height: 100vh;
+  }
+
+  /* nav */
   .nav__links { display: none; }
-  .hero__body { grid-template-columns: 1fr; align-content: start; }
-  .hero__left { padding-top: 10px; padding-bottom: 0; max-width: 100%; }
+
+  /* body stacks vertically */
+  .hero__body {
+    grid-template-columns: 1fr;
+    align-content: start;
+    gap: 0;
+  }
+
+  .hero__left {
+    padding-top: 10px;
+    padding-bottom: 0;
+    max-width: 100%;
+  }
+
   .hero__title { font-size: 60px; }
-  .hero__title-sub { -webkit-text-stroke: 0; color: var(--ink); padding-left: 0; }
-  .hero__right { min-height: 380px; }
-  .hero__stage { width: 210px; height: 58%; }
-  .hero__stage--back { right: 46%; transform: translateX(50%); bottom: 12%; }
-  .hero__stage--front { right: 50%; transform: translateX(50%); bottom: 4%; }
-  .hero__avatar { right: 50%; transform: translateX(50%); height: 56%; animation: none; }
+
+  .hero__title-sub {
+    -webkit-text-stroke: 0;
+    color: var(--ink);
+    padding-left: 0;
+  }
+
+  .hero__subtitle { max-width: 100%; }
+
+  .testimonial { max-width: 100%; }
+
+  /* empty right div creates breathing room for the photo */
+  .hero__right { min-height: 420px; }
+
+  /* center the photo blocks */
+  .hero__stage {
+    width: 220px;
+    height: 60%;
+  }
+
+  .hero__stage--back {
+    right: auto;
+    left: 50%;
+    transform: translateX(-58%);
+    bottom: 10%;
+    height: 58%;
+  }
+
+  .hero__stage--front {
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+  }
+
+  .hero__avatar {
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 58%;
+    animation: none;
+  }
 }
 
 @media (max-width: 560px) {
-  .hero { padding: 18px 18px 0; }
+  .hero { padding: 16px 20px 0; }
+
+  /* slim the resume button to icon-only */
+  .nav__resume-text { display: none; }
+
   .hero__title { font-size: 46px; }
-  .hero__avatar { height: 42%; }
+  .hero__greeting { font-size: 11px; letter-spacing: 0.18em; margin-bottom: 14px; }
+  .hero__subtitle { font-size: 15px; margin-bottom: 28px; }
+
+  .hero__actions { margin-bottom: 24px; }
+
+  /* hide divider + testimonial to keep hero tight on small screens */
+  .hero__divider { display: none; }
+  .testimonial { display: none; }
+
+  /* give photo enough room */
+  .hero__right { min-height: 380px; }
+
+  .hero__stage { width: 170px; height: 62%; }
+
+  .hero__stage--back { height: 60%; bottom: 8%; }
+
+  .hero__avatar { height: 60%; }
 }
