@@ -318,9 +318,34 @@
 
 @media (max-width: 560px) {
   .projects { padding: 0 18px 60px; }
+
+  .phead { margin: 20px 0 40px; }
   .phead__title { font-size: 36px; }
+  .phead__sub { font-size: 15px; }
+
+  .prow__media { height: 220px; }
+  .prow:first-child .prow__media { height: 220px; }
+  .prow__body { padding: 20px 20px 24px; }
   .prow__name { font-size: 26px; }
   .prow__arabic { font-size: 22px; }
-  .pcta { flex-direction: column; align-items: flex-start; }
+
   .pnav__links { display: none; }
+
+  .pcta { flex-direction: column; align-items: flex-start; gap: 16px; }
+}
+
+@media (max-width: 400px) {
+  .projects { padding: 0 14px 48px; }
+
+  .phead__title { font-size: 30px; }
+  .phead__sub { font-size: 14px; }
+
+  .prow__media { height: 190px; }
+  .prow:first-child .prow__media { height: 190px; }
+  .prow__body { padding: 18px 18px 22px; }
+  .prow__name { font-size: 22px; }
+  .prow__tagline { font-size: 13.5px; }
+  .prow__arabic { font-size: 19px; }
+
+  .pcta__label { font-size: 14px; }
 }

@@ -138,3 +138,35 @@
     padding: 28px 24px;
   }
 }
+
+@media (max-width: 560px) {
+  .contact__inner {
+    padding: 56px 20px 48px;
+    gap: 28px;
+  }
+
+  .contact__title { font-size: 34px; }
+
+  .contact__sub {
+    font-size: 15px;
+    max-width: 100%;
+    margin-bottom: 32px;
+  }
+
+  /* full-width CTA on small screens */
+  .contact__cta {
+    align-self: stretch;
+    justify-content: center;
+  }
+
+  .contact__links { gap: 20px; }
+
+  .footer { padding: 24px 20px; }
+}
+
+@media (max-width: 400px) {
+  .contact__inner { padding: 44px 16px 40px; }
+  .contact__title { font-size: 28px; }
+  .contact__sub { font-size: 14px; }
+  .contact__links { flex-direction: column; gap: 12px; }
+}

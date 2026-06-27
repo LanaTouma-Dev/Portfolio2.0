@@ -429,7 +429,6 @@
   .pd-hero__arabic { font-size: 30px; }
   .pd-hero__tagline { font-size: 15px; }
 
-  .pd-carousel__slide { padding: 20px; }
   .pd-carousel__slide img { max-height: 360px; }
   .pd-carousel__btn { width: 36px; height: 36px; }
   .pd-carousel__btn--prev { left: 10px; }
@@ -444,4 +443,29 @@
 
   .pd-foot { flex-direction: column; gap: 20px; align-items: flex-start; }
   .pd-foot__live { width: 100%; justify-content: center; }
+}
+
+@media (max-width: 400px) {
+  .pd__inner { padding: 0 16px; }
+
+  .pd-hero { padding: 24px 0 20px; }
+  .pd-hero__title { font-size: 32px; }
+  .pd-hero__arabic { font-size: 24px; }
+  .pd-hero__tagline { font-size: 14px; }
+
+  .pd-carousel__slide img { max-height: 280px; }
+
+  .pd-meta { gap: 20px; padding: 24px 0; margin-bottom: 48px; }
+  .pd-meta__value { font-size: 14px; }
+
+  .pd-overview { margin-bottom: 48px; }
+  .pd-overview__text { font-size: 17px; }
+
+  .pd-two-col { gap: 32px; margin-bottom: 56px; }
+  .pd-section__text { font-size: 15px; }
+
+  .pd-highlight { padding: 20px 18px; }
+  .pd-highlight__num { font-size: 30px; }
+
+  .pd-tech__chip { font-size: 12px; padding: 7px 14px; }
 }

@@ -157,9 +157,7 @@
 @media (max-width: 900px) {
   .about { padding: 56px 20px; }
 
-  .about__intro {
-    margin-bottom: 56px;
-  }
+  .about__intro { margin-bottom: 56px; }
 
   .about__hi { font-size: 46px; }
   .about__lead { font-size: 18px; margin-bottom: 0; }
@@ -171,11 +169,34 @@
 }
 
 @media (max-width: 600px) {
-  .bento-timeline {
-    grid-template-columns: 1fr;
-  }
+  .bento-timeline { grid-template-columns: 1fr; }
   .bento-card {
     grid-column: 1 / -1 !important;
     grid-row: auto !important;
   }
+}
+
+@media (max-width: 560px) {
+  .about { padding: 40px 20px 60px; }
+
+  .about__intro { margin-bottom: 36px; }
+
+  .about__eyebrow .eyebrow__num { font-size: 40px; }
+
+  .about__hi { font-size: 36px; }
+  .about__lead { font-size: 16px; }
+
+  .about__career-title { font-size: 28px; }
+  .about__career-body { font-size: 15px; }
+
+  .bento-card { padding: 14px 16px; }
+  .bento-title { font-size: 14.5px; }
+  .bento-note { font-size: 13px; }
+}
+
+@media (max-width: 400px) {
+  .about { padding: 32px 16px 52px; }
+  .about__hi { font-size: 30px; }
+  .about__lead { font-size: 15px; }
+  .about__career-title { font-size: 24px; }
 }
