@@ -378,10 +378,8 @@
     min-height: 100vh;
   }
 
-  /* nav */
   .nav__links { display: none; }
 
-  /* body stacks vertically */
   .hero__body {
     grid-template-columns: 1fr;
     align-content: start;
@@ -394,7 +392,10 @@
     max-width: 100%;
   }
 
-  .hero__title { font-size: 60px; }
+  .hero__title {
+    font-size: 60px;
+    white-space: normal;
+  }
 
   .hero__title-sub {
     -webkit-text-stroke: 0;
@@ -406,10 +407,8 @@
 
   .testimonial { max-width: 100%; }
 
-  /* empty right div creates breathing room for the photo */
   .hero__right { min-height: 420px; }
 
-  /* center the photo blocks */
   .hero__stage {
     width: 220px;
     height: 60%;
@@ -442,25 +441,79 @@
 @media (max-width: 560px) {
   .hero { padding: 16px 20px 0; }
 
-  /* slim the resume button to icon-only */
   .nav__resume-text { display: none; }
 
-  .hero__title { font-size: 46px; }
-  .hero__greeting { font-size: 11px; letter-spacing: 0.18em; margin-bottom: 14px; }
-  .hero__subtitle { font-size: 15px; margin-bottom: 28px; }
+  .hero__greeting {
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    margin-bottom: 14px;
+  }
+
+  .hero__title {
+    font-size: 42px;
+    white-space: normal;
+    line-height: 1;
+    margin-bottom: 20px;
+  }
+
+  .hero__subtitle {
+    font-size: 15px;
+    margin-bottom: 28px;
+  }
 
   .hero__actions { margin-bottom: 24px; }
 
-  /* hide divider + testimonial to keep hero tight on small screens */
   .hero__divider { display: none; }
   .testimonial { display: none; }
 
-  /* give photo enough room */
-  .hero__right { min-height: 380px; }
+  /* fixed px so blocks never bleed up into the text area */
+  .hero__right { min-height: 310px; }
 
-  .hero__stage { width: 170px; height: 62%; }
+  .hero__stage {
+    width: 155px;
+    height: 240px;
+  }
 
-  .hero__stage--back { height: 60%; bottom: 8%; }
+  .hero__stage--back {
+    height: 220px;
+    bottom: 18px;
+  }
 
-  .hero__avatar { height: 60%; }
+  .hero__stage--front {
+    height: 240px;
+    bottom: 0;
+  }
+
+  .hero__avatar { height: 285px; }
+}
+
+@media (max-width: 400px) {
+  .hero { padding: 14px 16px 0; }
+
+  .hero__title {
+    font-size: 34px;
+    letter-spacing: -0.01em;
+  }
+
+  .hero__subtitle { font-size: 14px; }
+
+  .btn--primary { padding: 14px 28px; font-size: 14px; }
+
+  .hero__right { min-height: 270px; }
+
+  .hero__stage {
+    width: 138px;
+    height: 205px;
+  }
+
+  .hero__stage--back {
+    height: 190px;
+    bottom: 14px;
+  }
+
+  .hero__stage--front {
+    height: 205px;
+  }
+
+  .hero__avatar { height: 248px; }
 }
