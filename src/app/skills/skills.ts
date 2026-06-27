@@ -27,13 +27,14 @@ interface Tech {
 interface Work {
   name: string;
   tag: string;
-  slug: string; // for /projects/:slug later
+  slug: string;
+  url?: string;
 }
 
 /* placeholder photos — swap for your real work shots in /public/work later */
 const PEXELS = {
   featured:
-    'https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=900',
+    'https://images.pexels.com/photos/4050315/pexels-photo-4050315.jpeg?auto=compress&cs=tinysrgb&w=900',
   gallery:
     'https://images.pexels.com/photos/1181673/pexels-photo-1181673.jpeg?auto=compress&cs=tinysrgb&w=900',
 };
@@ -70,19 +71,21 @@ export class Skills {
     { name: 'Azure', icon: ICON.azure },
   ];
 
-  /** the spotlight project — the "Featured" photo card */
-  readonly featured: Work & { image: string } = {
-    name: 'Project Atlas',
-    tag: 'System Design',
-    slug: 'atlas',
+  /** the spotlight — "Featured Paper" photo card */
+  readonly featured: Work & { image: string; desc: string } = {
+    name: 'Voting-based Multimodal Deception Detection',
+    tag: 'Research Paper · arXiv 2307.07516',
+    slug: 'deception-detection',
+    url: 'https://arxiv.org/abs/2307.07516',
     image: PEXELS.featured,
+    desc: 'A voting-based model combining CNN, SVM, and Word2Vec across visual, audio, and lexical features — achieving 97% accuracy on real-life trial data.',
   };
 
   /** the tall "Gallery" photo card teaser */
   readonly galleryImage = PEXELS.gallery;
   readonly gallery: Work[] = [
-    { name: 'Lumen AI', tag: 'LLM · RAG', slug: 'lumen' },
-    { name: 'DevFlow', tag: 'Full Stack', slug: 'devflow' },
+    { name: 'Artisan', tag: 'Angular · Django', slug: 'Artisan' },
+    { name: 'Pay it forward', tag: 'Full Stack', slug: 'payitforward' },
   ];
 
   /** the "Currently Learning" pill */

@@ -17,7 +17,7 @@
         <span class="eyebrow__num">—</span>Selected Work
       </span>
       <h1 class="phead__title" appReveal [revealDelay]="100">
-        Things I've <span class="grad">built.</span>
+        Things I've built.
       </h1>
       <p class="phead__sub" appReveal [revealDelay]="200">
         A few projects I'm proud of — from end-to-end platforms to the systems behind them.
@@ -86,25 +86,10 @@
       }
     </div>
 
-    <!-- ===== coming soon ===== -->
-    <div class="coming" appReveal revealFrom="up">
-      <span class="coming__label">More projects in progress</span>
-      <span class="coming__badge">Coming soon</span>
-    </div>
-
     <!-- ===== CTA ===== -->
     <div class="pcta" appReveal revealFrom="up" [revealDelay]="100">
-      <div>
-        <h3 class="pcta__title">Have a project in mind?</h3>
-        <p class="pcta__sub">I'm open to new work — let's build something together.</p>
-      </div>
-      <a class="pcta__btn" routerLink="/" fragment="contact">
-        Let's talk
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-          stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M5 12h14M13 6l6 6-6 6" />
-        </svg>
-      </a>
+      <span class="pcta__label">Want to work together?</span>
+      <a class="pcta__btn" routerLink="/" fragment="connect">Get in touch</a>
     </div>
 
   </div>

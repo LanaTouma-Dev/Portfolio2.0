@@ -123,7 +123,7 @@
   }
 
   /* second card staggers down */
-  &:nth-child(2) { margin-top: 100px; }
+  &:nth-child(2) { margin-top: 60px; }
 
   /* featured: spans full width, horizontal layout */
   &--featured {
@@ -151,7 +151,7 @@
 /* ---- image (top) ---- */
 .prow__media {
   position: relative;
-  height: 340px;
+  height: 240px;
   flex-shrink: 0;
   overflow: hidden;
 
@@ -165,15 +165,15 @@
   }
 }
 
-/* first card gets a taller image */
-.prow:first-child .prow__media { height: 400px; }
+/* first card gets a slightly taller image */
+.prow:first-child .prow__media { height: 280px; }
 
 /* ---- content (bottom) ---- */
 .prow__body {
   position: relative;
   display: flex;
   flex-direction: column;
-  padding: 28px 32px 32px;
+  padding: 22px 26px 26px;
   overflow: hidden;
   flex: 1;
 }
@@ -264,77 +264,32 @@
   }
 }
 
-/* ============ COMING SOON STRIP ============ */
-.coming {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 22px 32px;
-  border-radius: 14px;
-  border: 1.5px dashed rgba(124, 58, 71, 0.26);
-  margin-bottom: 52px;
-}
-
-.coming__label {
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--ink-mute);
-}
-
-.coming__badge {
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--accent);
-  background: rgba(124, 58, 71, 0.08);
-  padding: 5px 12px;
-  border-radius: 20px;
-}
-
 /* ============ CTA ============ */
 .pcta {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  padding: 36px 44px;
-  border-radius: 22px;
-  background: linear-gradient(135deg, var(--surface) 0%, #ece1d0 100%);
-  border: 1px solid var(--line);
+  padding: 32px 0;
+  border-top: 1px solid var(--line);
+  margin-top: 12px;
 }
 
-.pcta__title {
-  font-family: 'DM Serif Display', serif;
-  font-size: 26px;
-  font-weight: 400;
-  letter-spacing: -0.01em;
-  color: var(--ink);
-}
-
-.pcta__sub {
-  margin-top: 6px;
-  font-size: 14.5px;
+.pcta__label {
+  font-size: 15px;
   color: var(--ink-soft);
 }
 
 .pcta__btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  flex-shrink: 0;
-  padding: 14px 30px;
-  border-radius: 4px;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 600;
-  color: #f4efe8;
+  color: var(--ink);
   text-decoration: none;
-  background: var(--ink);
-  box-shadow: 0 10px 26px var(--shadow);
-  transition: transform 0.2s ease, background 0.2s ease;
+  border-bottom: 1.5px solid var(--ink);
+  padding-bottom: 2px;
+  transition: opacity 0.2s ease;
 
-  svg { width: 18px; height: 18px; transition: transform 0.2s ease; }
-  &:hover { transform: translateY(-2px); background: #322a25; svg { transform: translateX(3px); } }
+  &:hover { opacity: 0.6; }
 }
 
 /* ============ RESPONSIVE ============ */

@@ -21,6 +21,7 @@ export interface ProjectData {
   from: Dir;
   draft?: boolean;
   featured?: boolean; // spans full width in the grid
+  carouselBg?: string; // override dark default for light-themed screenshots
   // case study fields
   year?: string;
   role?: string;
@@ -74,6 +75,47 @@ export const PROJECTS: ProjectData[] = [
     ],
   },
   {
+    slug: 'journi',
+    name: 'Journi',
+    tagline:
+      'A collaborative trip planning app — shared itineraries, packing lists, budgets, and your whole crew in one place.',
+    tags: ['Frontend', 'Angular', 'Tailwind CSS'],
+    image: 'Journi1.png',
+    images: ['Journi1.png', 'Journi3.png', 'Journi4.png', 'Journi5.png'],
+    pos: '50% 30%',
+    gradient: 'linear-gradient(150deg, #FF6B6B, #FFA07A)',
+    carouselBg: '#F7F3EE',
+    size: 'lg',
+    from: 'right',
+    year: '2026',
+    role: 'Frontend Developer',
+    overview:
+      'Journi is a collaborative trip planning web app built for groups — itineraries, packing lists, budget splits, and member management all live in one shared space. The goal was to replace scattered group chats and spreadsheets with a single, beautiful place to plan together.',
+    challenge:
+      'The main challenge was building a nested route architecture where a persistent trip shell (cover photo, info strip, tab nav) wraps four fully independent inner pages — each with their own reactive state — without any global state management library.',
+    solution:
+      'I used Angular 21 child routes with a single `<router-outlet>` inside the trip shell, and Angular signals for local reactive state in each page. Lazy-loaded components keep the initial bundle small, and computed signals replace the need for RxJS in most of the UI.',
+    tech: ['Angular 21', 'Tailwind CSS', 'TypeScript', 'Angular Signals'],
+    highlights: [
+      {
+        title: 'Day-by-Day Itinerary',
+        desc: 'Per-day activity timeline with type icons, member assignments, and one-click day switching.',
+      },
+      {
+        title: 'Shared Packing List',
+        desc: 'Category-organised checklist with per-item assignees, live progress bar, and toggle-to-pack.',
+      },
+      {
+        title: 'Budget Tracker',
+        desc: 'Expense log with category icons, equal/solo split tracking, and an auto-calculated settle-up panel.',
+      },
+      {
+        title: 'Trip Dashboard',
+        desc: 'Card grid showing all trips with Unsplash cover photos, status badges, and member avatar stacks.',
+      },
+    ],
+  },
+  /* {
     slug: 'pay-it-forward',
     name: 'Pay It Forward',
     tagline:
@@ -112,7 +154,7 @@ export const PROJECTS: ProjectData[] = [
         desc: 'Fully localized in English and Arabic with RTL support built into the design system.',
       },
     ],
-  },
+  }, */
   {
     slug: 'selene-suite',
     name: 'Selene Suite',

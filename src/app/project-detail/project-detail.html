@@ -35,12 +35,14 @@
   <!-- CAROUSEL -->
   @if (slides.length) {
   <div class="pd__inner">
-    <div class="pd-carousel" appReveal [revealDelay]="100">
+    <div class="pd-carousel" appReveal [revealDelay]="100"
+      [style.background]="project.carouselBg || '#1e1813'">
       <div class="pd-carousel__viewport">
         <div class="pd-carousel__track"
           [style.transform]="'translateX(-' + currentSlide * 100 + '%)'">
           @for (s of slides; track s) {
-            <div class="pd-carousel__slide">
+            <div class="pd-carousel__slide"
+              [style.background]="project.carouselBg || '#1e1813'">
               <img [src]="s" [alt]="project.name + ' screenshot'" />
             </div>
           }

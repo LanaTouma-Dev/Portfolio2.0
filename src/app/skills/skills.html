@@ -65,15 +65,15 @@
       </span>
     </div>
 
-    <!-- ===== Featured project (photo card) ===== -->
-    <!-- TODO: routerLink="/projects/{{ featured.slug }}" once the projects page exists -->
-    <div class="bcard card--feat" appReveal revealFrom="up" [revealDelay]="120">
+    <!-- ===== Featured paper (photo card) ===== -->
+    <a class="bcard card--feat" appReveal revealFrom="up" [revealDelay]="120"
+       [href]="featured.url" target="_blank" rel="noopener noreferrer">
       <img class="card__img" [src]="featured.image" alt="" loading="lazy" />
       <div class="card__shade"></div>
-      <span class="tile__label tile__label--light">Featured</span>
+      <span class="tile__label tile__label--light">Featured Paper</span>
       <div class="feat__bottom">
         <h3 class="feat__name">{{ featured.name }}</h3>
-        <p class="feat__desc">A distributed platform handling real-time data at scale.</p>
+        <p class="feat__desc">{{ featured.desc }}</p>
         <div class="feat__foot">
           <span class="feat__tag">{{ featured.tag }}</span>
           <span class="round-arrow round-arrow--light" aria-hidden="true">
@@ -84,7 +84,7 @@
           </span>
         </div>
       </div>
-    </div>
+    </a>
 
     <!-- ===== Tech Stack ===== -->
     <div class="bcard card--stack" appReveal revealFrom="up" [revealDelay]="160">
