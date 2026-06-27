@@ -43,7 +43,7 @@ export const PROJECTS: ProjectData[] = [
     image: 'artisan1.png',
     pos: '50% 42%',
     gradient: 'linear-gradient(150deg, #b85c38, #e3b183)',
-    url: 'https://artisan.taqtech-agency.tech',
+    url: '',
     size: 'lg',
     from: 'left',
     year: '2024',
